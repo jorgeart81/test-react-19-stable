@@ -2,6 +2,7 @@ import { useActionState } from 'react';
 
 import type { Planet } from '../../interfaces/planet.interface';
 import { createPlanetAction } from '../../actions/create-planet.action';
+import { SubmitButton } from './SubmitButton';
 
 interface Props {
   onAddPlanet: (planet: Planet) => void;
@@ -43,13 +44,7 @@ export const EditPlanetForm = ({ onAddPlanet }: Props) => {
         className='mb-2 md:mb-0 md:mr-2 p-2 border border-gray-300 rounded flex-1'
         required
       />
-      <button
-        type='submit'
-        className='bg-blue-500 disabled:bg-gray-500 text-white p-2 rounded flex-1 sm:flex-none'
-        disabled={isPending}
-      >
-        Agregar planeta
-      </button>
+      <SubmitButton />
     </form>
   );
 };
