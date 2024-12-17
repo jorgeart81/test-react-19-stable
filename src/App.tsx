@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import { getPlanets } from './actions/get-planets.action';
+import { getPlanetsAction } from './actions/get-planets.action';
 import Planets from './pages/Planets';
 import { ErrorBoundary } from './shared/ErrorBoundary';
 
@@ -13,7 +13,7 @@ function App() {
         fallback={<span className='text-red-500'>Error loading planets</span>}
       >
         <Suspense fallback={<span className='animate-pulse'>Loading...</span>}>
-          <Planets getPlanets={getPlanets()} />
+          <Planets getPlanets={getPlanetsAction()} />
         </Suspense>
       </ErrorBoundary>
     </div>
